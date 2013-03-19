@@ -25,7 +25,7 @@ VIRTIS (Visible and Infrared Thermal Imaging Spectrometer) is a complex instrume
 ##2. VIRTIS Data
 
 
-The VIRTIS data are spectral cubes stored in [PDS format](http://pds.nasa.gov *PDS NASA*).
+The VIRTIS data are spectral cubes stored in [PDS format](http://pds.nasa.gov).
 
 VIRTIS data schema:
 
@@ -61,14 +61,14 @@ In the VIRTIS data set there are three different kind of files.
 ***
 
 ##3. VIRTISpy Methods:
-<table>
-<tr><td> __headerValue(_key_)__ </td><td> _key_ </td><td> string return the value of the PDS label for the PDS the selected PDS keyword; </td></tr>
-<tr><td> __getBand(_band_)__ </td><td> _band_ integer </td><td>return a float matrix corresponding to the selected band;</td></tr>
-<tr><td> __getSpectrum(_sample_,_line_)__</td><td> _sample_ integer; _line_ integer </td><td>return an array containing the VIRTIS spectrum for the pixel at a specific sample and line;  </td></tr>
-<tr><td> __getWave()__ </td><td></td><td>return an array containing the wavelength of each VIRTIS band;</td></tr>
-<tr><td> __getHK(_key_,_line_)__</td><td> _key_ string, _line_ integer</td><td>return the housekeeping value for the specific key and a specific line;</td></tr>
-<tr><td> __getGeometry(_plane_)__</td><td> _plane_ integer or string </td><td>return the geometry plane of the cube.</td></tr>
-</table>
+
+ __headerValue( _key_ )__ ( _key_  string ) return the value of the PDS label for the PDS the selected PDS keyword;  
+ __getBand( _band_ )__ ( _band_ integer ) return a float matrix corresponding to the selected band;  
+ __getSpectrum( _sample_ , _line_ )__ ( _sample_ integer; _line_ integer ) return an array containing the VIRTIS spectrum for the pixel at a specific sample and line;  
+ __getWave()__ return an array containing the wavelength of each VIRTIS band;  
+ __getHK( _key_ , _line_ )__ ( _key_ string, _line_ integer ) return the housekeeping value for the specific key and a specific line;  
+ __getGeometry(  _plane_ )__ ( _plane_ integer or string ) return the geometry plane of the cube.
+
 
 ***  
 
