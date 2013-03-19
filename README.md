@@ -77,7 +77,9 @@ In the VIRTIS data set there are three different kind of files.
 
 To install from source, VIRTISpy-X.Y.Z.tar.gz from the [VIRTISpy GitHube site](https://github.com/RomoloPoliti/VIRTISpy), unpack, cd to VIRTISpy-X.Y.Z and run
 
+```bash
 	python setup.py install
+```
 
 ***
 
@@ -86,13 +88,14 @@ To install from source, VIRTISpy-X.Y.Z.tar.gz from the [VIRTISpy GitHube site](h
 
 Create the VIRTISpy object:
 
+```python
 	>>>from VIRTISpy import *
-	>>>cb=VIRTISpy('VV0000_00.CAL)
-
+	>>>cb=VIRTISpy('VV0000_00.CAL')
+```
 
 Visualize the spectrum of the pixel (100,100):
 
-
+```python
 	>>>import matplotlib.pyplot as plt
 	>>>sp=cb.getSpectrum(100,100)
 	>>>sp=where(sp<=0,0,sp) # necessary to remove the not valid values
@@ -101,16 +104,17 @@ Visualize the spectrum of the pixel (100,100):
 	>>>plt.xlabel('Wavelength [$\mu m$]')
 	>>>plt.ylabel('%s [%s]'%(cb.headerValue('CORE_NAME'),cb.headerValue('CORE_UNIT')))
 	>>>plt.show()
-
+```
 
 Visualize a picture:
 
+```python
 	>>> import matplotlib.cm as cm
 	>>> img=cb.getBand(150)
 	>>> img=where(img<=0,0,img)
 	>>> plt.imshow(img,origin='lower',cmap=cm.gray,axes=None)
 	>>> plt.show()
-
+```
 
 
 ##6. Brief History
