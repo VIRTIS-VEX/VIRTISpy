@@ -24,47 +24,46 @@ VIRTIS (Visible and Infrared Thermal Imaging Spectrometer) is a complex instrume
 The VIRTIS data are spectral cubes stored in [http://pds.nasa.gov PDS format].
 
 VIRTIS data schema:
-	{{{
-	                 _____________________________________   ____
-	                /                                    /| /   /|
-	               /                                    / |/   / |
-	     Bands    /          Data Core                 /  /   /  |
-	             /                                    /  /   /   |
-	            /____________________________________/  /__ /    |
-	           |            Samples                  |  |  |     |
-	           |                                     |  |  |     | Side Planes
-	           |                              Lines  |  |  |     |
-	           |                                     |  |  |    /
-	           |                                     |  |  |   / 
-	           |                                     |  |  |  /   
-	           |                                     | /|  | /   
-	           |_____________________________________|/ |__|/    
-	             /                                     /  /      
-	            /_____________________________________/  /
-	           |        Bottom Planes                 | /
-	           |______________________________________|/
-	
-	}}}
+
+	             _____________________________________   ____
+                /                                    /| /   /|
+               /                                    / |/   / |
+     Bands    /          Data Core                 /  /   /  |
+             /                                    /  /   /   |
+            /____________________________________/  /__ /    |
+           |            Samples                  |  |  |     |
+           |                                     |  |  |     | Side Planes
+           |                              Lines  |  |  |     |
+           |                                     |  |  |    /
+           |                                     |  |  |   / 
+           |                                     |  |  |  /   
+           |                                     | /|  | /   
+           |_____________________________________|/ |__|/    
+             /                                     /  /      
+            /_____________________________________/  /
+           |        Bottom Planes                 | /
+           |______________________________________|/
+
+
 
 The dimensions, in Bands, Samples and Lines, of the Data Core, Side Planes and Bottom Planes are reported in the header of the file at the specifics key.
 
 In the VIRTIS data set there are three different kind of files.
-  * *.QUB* - Raw data file
-  * *.CAL* - Calibrated data file
-  * *.GEO* - Geometry of the each pixel of the raw or calibrated file.
+
+  + **\*\.QUB** - Raw data file
+  + **\*\.CAL** - Calibrated data file
+  + **\*\.GEO** - Geometry of the each pixel of the raw or calibrated file.
 	
 
 ##3. VIRTISpy Methods:
 
+|__headerValue(_key_)__|_key_ string|return the value of the PDS label for the PDS the selected PDS keyword;|
 
-|| *headerValue(_key_)* || _key_ string ||return the value of the PDS label for the PDS the selected PDS keyword;||
-|| *getBand(_band_)* || _band_ integer ||return a float matrix corresponding to the selected band;||
-|| *getSpectrum(_sample_,_line_)* ||_sample_ integer;_line_ integer||return an array containing the VIRTIS spectrum for the pixel at a specific sample and line;||
-|| *getWave()* || ||return an array containing the wavelength of each VIRTIS band;||
-|| *getHK(_key_,_line_)* ||_key_ string, _line_ integer ||return the housekeeping value for the specific key and a specific line;||
-|| *getGeometry(_plane_)* || _plane_ integer or string||return the geometry plane of the cube.||
-
-
+__getBand(_band_)__	_band_ integer	return a float matrix corresponding to the selected band;
+__getSpectrum(_sample_,_line_)__	_sample_ integer;_line_ integer	return an array containing the VIRTIS spectrum for the pixel at a specific sample and line;
+__getWave()__		return an array containing the wavelength of each VIRTIS band;
+__getHK(_key_,_line_)__	_key_ string, _line_ integer	return the housekeeping value for the specific key and a specific line;
+__getGeometry(_plane_)__	_plane_ integer or string	return the geometry plane of the cube.
 
 ##4. Installation:
 
