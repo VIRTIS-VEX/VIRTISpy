@@ -54,51 +54,56 @@ In the VIRTIS data set there are three different kind of files.
   + **\*\.CAL** - Calibrated data file
   + **\*\.GEO** - Geometry of the each pixel of the raw or calibrated file.
 	
+***
 
 ##3. VIRTISpy Methods:
 
-|__headerValue(_key_)__|_key_ string|return the value of the PDS label for the PDS the selected PDS keyword;|
-
-__getBand(_band_)__	_band_ integer	return a float matrix corresponding to the selected band;
-__getSpectrum(_sample_,_line_)__	_sample_ integer;_line_ integer	return an array containing the VIRTIS spectrum for the pixel at a specific sample and line;
-__getWave()__		return an array containing the wavelength of each VIRTIS band;
-__getHK(_key_,_line_)__	_key_ string, _line_ integer	return the housekeeping value for the specific key and a specific line;
+| __headerValue(_key_)__ | _key_ | string return the value of the PDS label for the PDS the selected PDS keyword; |
+__getBand(_band_)__	_band_ integer	return a float matrix corresponding to the selected band;  
+__getSpectrum(_sample_,_line_)__	_sample_ integer;_line_ integer	return an array containing the VIRTIS spectrum for the pixel at a specific sample and line;  
+__getWave()__		return an array containing the wavelength of each VIRTIS band;  
+__getHK(_key_,_line_)__	_key_ string, _line_ integer	return the housekeeping value for the specific key and a specific line;  
 __getGeometry(_plane_)__	_plane_ integer or string	return the geometry plane of the cube.
+
+***  
 
 ##4. Installation:
 
 
 To install from source, VIRTISpy-X.Y.Z.tar.gz from the Google code site (http://code.google.com/p/virtispy), unpack, cd to VIRTISpy-X.Y.Z and run 'python setup.py install'.
 
+***
 
 ##5. Usage
 
 
 Create the VIRTISpy object:
-{{{
->>>from VIRTISpy import *
->>>cb=VIRTISpy('VV0000_00.CAL)
-}}}
+
+	>>>from VIRTISpy import *
+	>>>cb=VIRTISpy('VV0000_00.CAL)
+
 
 Visualize the spectrum of the pixel (100,100):
-{{{
->>>import matplotlib.pyplot as plt
->>>sp=cb.getSpectrum(100,100)
->>>sp=where(sp<=0,0,sp) # necessary to remove the not valid values
->>>wl=cb.getWave()
->>>plt.plot(wl,sp)
->>>plt.xlabel('Wavelength [$\mu m$]')
->>>plt.ylabel('%s [%s]'%(cb.headerValue('CORE_NAME'),cb.headerValue('CORE_UNIT')))
->>>plt.show()
-}}}
+
+
+	>>>import matplotlib.pyplot as plt
+	>>>sp=cb.getSpectrum(100,100)
+	>>>sp=where(sp<=0,0,sp) # necessary to remove the not valid values
+	>>>wl=cb.getWave()
+	>>>plt.plot(wl,sp)
+	>>>plt.xlabel('Wavelength [$\mu m$]')
+	>>>plt.ylabel('%s [%s]'%(cb.headerValue('CORE_NAME'),cb.headerValue('CORE_UNIT')))
+	>>>plt.show()
+
+
 Visualize a picture:
-{{{
->>> import matplotlib.cm as cm
->>> img=cb.getBand(150)
->>> img=where(img<=0,0,img)
->>> plt.imshow(img,origin='lower',cmap=cm.gray,axes=None)
->>> plt.show()
-}}}
+
+	>>> import matplotlib.cm as cm
+	>>> img=cb.getBand(150)
+	>>> img=where(img<=0,0,img)
+	>>> plt.imshow(img,origin='lower',cmap=cm.gray,axes=None)
+	>>> plt.show()
+
 
 
 ##6. Brief History
