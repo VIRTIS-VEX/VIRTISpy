@@ -4,12 +4,12 @@ A Python class for read and manipulate the VIRTIS-VEX data cubes.
 
 ##Overview
 
- #.  VIRTIS
- #.  VIRTIS Data
- #.  VIRTISpy Methods
- #.  VIRTISpy Installation
- #.  Usage
- #.  Brief History
+ 1.  VIRTIS
+ 2.  VIRTIS Data
+ 3.  VIRTISpy Methods
+ 4.  VIRTISpy Installation
+ 5.  Usage
+ 6.  Brief History
 
 
 ##1. VIRTIS 
@@ -24,27 +24,27 @@ VIRTIS (Visible and Infrared Thermal Imaging Spectrometer) is a complex instrume
 The VIRTIS data are spectral cubes stored in [http://pds.nasa.gov PDS format].
 
 VIRTIS data schema:
-{{{
-                 _____________________________________   ____
-                /                                    /| /   /|
-               /                                    / |/   / |
-     Bands    /          Data Core                 /  /   /  |
-             /                                    /  /   /   |
-            /____________________________________/  /__ /    |
-           |            Samples                  |  |  |     |
-           |                                     |  |  |     | Side Planes
-           |                              Lines  |  |  |     |
-           |                                     |  |  |    /
-           |                                     |  |  |   / 
-           |                                     |  |  |  /   
-           |                                     | /|  | /   
-           |_____________________________________|/ |__|/    
-             /                                     /  /      
-            /_____________________________________/  /
-           |        Bottom Planes                 | /
-           |______________________________________|/
-
-}}}
+	{{{
+	                 _____________________________________   ____
+	                /                                    /| /   /|
+	               /                                    / |/   / |
+	     Bands    /          Data Core                 /  /   /  |
+	             /                                    /  /   /   |
+	            /____________________________________/  /__ /    |
+	           |            Samples                  |  |  |     |
+	           |                                     |  |  |     | Side Planes
+	           |                              Lines  |  |  |     |
+	           |                                     |  |  |    /
+	           |                                     |  |  |   / 
+	           |                                     |  |  |  /   
+	           |                                     | /|  | /   
+	           |_____________________________________|/ |__|/    
+	             /                                     /  /      
+	            /_____________________________________/  /
+	           |        Bottom Planes                 | /
+	           |______________________________________|/
+	
+	}}}
 
 The dimensions, in Bands, Samples and Lines, of the Data Core, Side Planes and Bottom Planes are reported in the header of the file at the specifics key.
 
