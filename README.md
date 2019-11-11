@@ -1,10 +1,10 @@
-#VIRTISpy
+# VIRTISpy
 
 A Python class for read and manipulate the VIRTIS-VEX data cubes.
 
 ***
 
-##Overview
+## Overview
 
  1.  VIRTIS
  2.  VIRTIS Data
@@ -15,14 +15,14 @@ A Python class for read and manipulate the VIRTIS-VEX data cubes.
 
 ***
 
-##1. VIRTIS 
+## 1. VIRTIS 
 
 
 VIRTIS (Visible and Infrared Thermal Imaging Spectrometer) is a complex instrument initially devoted to the remote sensing study of comet Wirtanen on the Rosetta mission, at wavelengths between 0.3 and 5 µm. The focal planes, with state of the art CCD and infrared detectors achieve high sensitivity for low emissivity sources. Due to the high flexibility of operational modes of VIRTIS, these performances are also ideally adapted for the study of Venus atmosphere, both on night and day side. VIRTIS is therefore aimed to provide a 4-dimensional study of Venus atmosphere (2D imaging + spectral dimension + temporal variations), the spectral variations permitting a sounding at different levels of the atmosphere, from the ground up to the thermosphere. The infrared capability of VIRTIS is especially well fitted to the thermal sounding of the night side atmosphere (Taylor et al, 1997), which give a tomography of the atmosphere down to the surface.
 
 ***
 
-##2. VIRTIS Data
+## 2. VIRTIS Data
 
 
 The VIRTIS data are spectral cubes stored in [PDS format](http://pds.nasa.gov).
@@ -60,7 +60,7 @@ In the VIRTIS data set there are three different kind of files.
 	
 ***
 
-##3. VIRTISpy Methods:
+## 3. VIRTISpy Methods:
 
  __headerValue( _key_ )__ ( _key_  string ) return the value of the PDS label for the PDS the selected PDS keyword;  
  __getBand( _band_ )__ ( _band_ integer ) return a float matrix corresponding to the selected band;  
@@ -83,7 +83,7 @@ To install from source, VIRTISpy-X.Y.Z.tar.gz from the [VIRTISpy GitHube site](h
 
 ***
 
-##5. Usage
+## 5. Usage
 
 
 Create the VIRTISpy object:
@@ -117,7 +117,7 @@ Visualize a picture:
 ```
 
 
-##6. Brief History
+## 6. Brief History
 
 
 VIRTISpy was started by Romolo Politi in November 2011 as Python porting of the IDL VIRTISpds developped by Stefan Erard.
